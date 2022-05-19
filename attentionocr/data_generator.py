@@ -24,7 +24,7 @@ seq = iaa.SomeOf((0, 2), [
 
 
 def random_font():
-    fontname = choice(list(glob('synthetic/fonts/*.ttf', recursive=True)))
+    fontname = choice(list(glob('/content/attentionocr/synthetic/fonts/*.ttf', recursive=True)))
     font = ImageFont.truetype(fontname, size=randint(24, 32))
     return font
 
@@ -38,7 +38,7 @@ def random_string(length: Optional[int] = None):
         length = randint(4, 20)
 
     if randint(0, 1) == 0:
-        random_file = choice(list(glob('synthetic/texts/*.txt')))
+        random_file = choice(list(glob('/content/attentionocr/synthetic/texts/*.txt')))
         with open(random_file, 'r') as f:
             random_txt = f.readlines()
         random_txt = choice(random_txt)
@@ -54,7 +54,7 @@ def random_string(length: Optional[int] = None):
 
 
 def random_background(height, width):
-    background_image = choice(list(glob('synthetic/images/*.jpg')))
+    background_image = choice(list(glob('/content/attentionocr/synthetic/images/*.jpg')))
     original = Image.open(background_image)
     L = original.convert('L')
     original = Image.merge('RGB', (L, L, L))
