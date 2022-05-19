@@ -3,7 +3,7 @@
 if [ ! -d fonts ]; then
   mkdir -p /content/attentionocr/synthetic/fonts
   git clone https://github.com/google/fonts.git fonts
-  find fonts -type f -iname "*.ttf" -exec mv {}  /content/attentionocr/synthetic/fonts;
+  find fonts -type f -iname "*.ttf" -exec mv {} /content/attentionocr/synthetic/fonts \;
 fi
 
 if [ ! -d texts ]; then
