@@ -8,7 +8,7 @@ fi
 
 if [ ! -d texts ]; then
   mkdir -p /content/attentionocr/synthetic/texts
-  python3 /content/attentionocr/synthetic/texts/download_texts.py
+  python3 /content/attentionocr/synthetic/download_texts.py
 fi
 
 if [ ! -d images ]; then
